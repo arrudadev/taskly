@@ -1,0 +1,14 @@
+services:
+  next:
+    container_name: taskly_next
+    build:
+      context: ./next
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./next:/app
+      - taskly_next_node_modules:/app/node_modules
+
+volumes:
+  taskly_next_node_modules:
